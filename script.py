@@ -1,4 +1,15 @@
-ans = 0
+#!/usr/bin/python3
+import sys 
+
+def tonum(s):
+    try:
+        return int(s)
+    except:
+        return float(s)
+
+ans = 0 
 for line in sys.stdin:
-    line = line.rstrip()  
+    line = line.rstrip()
     ans += tonum(line)
+
+print(ans)
