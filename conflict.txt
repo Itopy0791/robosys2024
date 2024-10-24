@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 This is change from B
+=======
+This is change from A
+>>>>>>> 6f184b8b269b596fa2b61ef9ce375327243f0724
