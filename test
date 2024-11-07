@@ -1,0 +1,9 @@
+name: test
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses:
+    - name: All test
+      run: bash -xv ./tesy.bash
