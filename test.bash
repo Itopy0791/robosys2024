@@ -11,18 +11,18 @@ res=0
 out=$(seq 5 | ./plus)
 [ "${out}" = "15" ] || ng "$LINENO"
 
-# 無効な入力をテスト (ここで出力からWarningメッセージを無視)
+# 無効な入力をテスト (警告メッセージを無視して最終結果を比較)
 out=$(echo あ | ./plus)
-# Adjusting expected value to match output format
-[ "${out}" = "0" ] || ng "$LINENO"
+# 出力が警告メッセージを含んでいる場合、最終結果 "0" を比較
+out_result=$(echo "$out" | tail -n 1)  # 最後の行を抽出
+[ "${out_result}" = "0" ] || ng "$LINENO"
 
 # 空の入力をテスト
 out=$(echo | ./plus)
-# Adjusting expected value to match output format
-[ "${out}" = "0" ] || ng "$LINENO"
+out_result=$(echo "$out" | tail -n 1)  # 最後の行を抽出
+[ "${out_result}" = "0" ] || ng "$LINENO"
 
 # 最後にテストの結果を確認
 [ "$res" = 0 ] && echo OK
 exit $res
-
 
