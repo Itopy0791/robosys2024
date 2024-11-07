@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 # SPDX-FileCopyrightText: 2024 Ryuichi Ueda s23C1017KB@s.chibakoudai.jp
-#!/usr/bin/python3
-#!/usr/bin/python3
-# SPDX-FileCopyrightText: 2022 Ryuichi Ueda
 # SPDX-License-Identifier: BSD-3-Clause
 
 import sys 
