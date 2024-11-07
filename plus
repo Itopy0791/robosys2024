@@ -2,15 +2,24 @@
 # SPDX-FileCopyrightText: 2024 Ryuichi Ueda s23C1017KB@s.chibakoudai.jp
 # SPDX-License-Identifier: BSD-3-Clause
 
-import sys 
+import sys
 
 def tonum(s):
+    s = s.strip()  # 空白や改行を削除
+    if not s:  # 空の文字列の場合は無視（0として処理）
+        return 0
     try:
-        return int(s)
-    except:
-        return float(s)
+        return int(s)  # 整数として変換
+    except ValueError:
+        try:
+            return float(s)  # 整数変換に失敗した場合、浮動小数点数として変換
+        except ValueError:
+            print(f"Warning: '{s}' is not a valid number. Treated as 0.")
+            return 0  # 無効な入力を0として処理
 
-ans = 0 
+ans = 0
 for line in sys.stdin:
     ans += tonum(line)
+
 print(ans)
+
